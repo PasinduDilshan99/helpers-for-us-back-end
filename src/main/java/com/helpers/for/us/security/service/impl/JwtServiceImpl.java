@@ -142,11 +142,11 @@
         public ResponseCookie buildAccessTokenCookie(String token) {
             return ResponseCookie.from(accessCookieName, token)
                     .httpOnly(true)
-                    .secure(false)
+                    .secure(true)
                     .path("/")
                     .maxAge(Duration.ofSeconds(accessCookieMaxAge))
-                    .sameSite("Strict")
-//                    .domain(".felicitatrips.com")
+                    .sameSite("None")
+                    .domain(".felicitatrips.com")
                     .build();
         }
 
@@ -154,11 +154,11 @@
         public ResponseCookie buildRefreshTokenCookie(String token) {
             return ResponseCookie.from(refreshCookieName, token)
                     .httpOnly(true)
-                    .secure(false)
+                    .secure(true)
                     .path("/")
                     .maxAge(Duration.ofSeconds(refreshCookieMaxAge))
-                    .sameSite("Strict")
-//                    .domain(".felicitatrips.com")
+                    .sameSite("None")
+                    .domain(".felicitatrips.com")
                     .build();
         }
 
@@ -213,11 +213,11 @@
         public ResponseCookie buildLogoutAccessTokenCookie() {
             return ResponseCookie.from(accessCookieName, "")
                     .httpOnly(true)
-                    .secure(false)
+                    .secure(true)
                     .path("/")
                     .maxAge(0)
                     .sameSite("Strict")
-//                    .domain(".felicitatrips.com")
+                    .domain(".felicitatrips.com")
                     .build();
         }
 
@@ -225,11 +225,11 @@
         public ResponseCookie buildLogoutRefreshTokenCookie() {
             return ResponseCookie.from(refreshCookieName, "")
                     .httpOnly(true)
-                    .secure(false)
+                    .secure(true)
                     .path("/")
                     .maxAge(0)
-                    .sameSite("Strict")
-//                    .domain(".felicitatrips.com")
+                    .sameSite("NONE")
+                    .domain(".felicitatrips.com")
                     .build();
         }
     }
